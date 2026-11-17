@@ -279,7 +279,6 @@
             <div class="tax-note">Tax included. Shipping calculated at checkout.</div>
             <div class="quantity-label">Quantity</div>
             <div class="action-row">
-                <!-- Added "KG" label right here -->
                 <div class="qty-selector">
                     <span class="kg-label">KG</span>
                     <button onclick="changeQty(-1)">-</button>
@@ -287,7 +286,7 @@
                     <button onclick="changeQty(1)">+</button>
                 </div>
                 <button class="btn-add-cart" onclick="addToCart()">ADD TO CART</button>
-                <button class="btn-buy-now" onclick="window.location.href='checkout.html'">BUY NOW</button>
+                <button class="btn-buy-now" onclick="buyNow()">BUY NOW</button>
             </div>
             <div class="secondary-actions">
                 <div><i class="fa-solid fa-arrow-right-arrow-left"></i> Compare</div>
@@ -422,6 +421,17 @@
 
         // ----- REST OF THE LOGIC -----
         function addToCart() { const qty = parseInt(document.getElementById('mainQty').value); const product = { name: "Edible Salt", price: 2.55, image: "edible.jpg" }; let cart = JSON.parse(localStorage.getItem('himalora_cart')) || []; const existingItem = cart.find(item => item.name === product.name); if (existingItem) { existingItem.qty += qty; } else { cart.push({ ...product, qty: qty }); } localStorage.setItem('himalora_cart', JSON.stringify(cart)); updateCartCount(); showToast("Added to cart successfully!"); }
+        
+        function buyNow() {
+            const qty = parseInt(document.getElementById('mainQty').value);
+            const productName = "Edible Salt";
+            const productPrice = 2.55;
+            const productImage = "edible.jpg";
+
+            // Redirect to checkout with URL parameters
+            window.location.href = `checkout.html?buynow=true&name=${encodeURIComponent(productName)}&price=${productPrice}&image=${encodeURIComponent(productImage)}&qty=${qty}`;
+        }
+
         function updateCartCount() { const cart = JSON.parse(localStorage.getItem('himalora_cart')) || []; const totalItems = cart.reduce((sum, item) => sum + item.qty, 0); document.getElementById('cartCount').innerText = totalItems; }
         function changeQty(amount) { let qtyInput = document.getElementById('mainQty'); let currentQty = parseInt(qtyInput.value) || 0; if (currentQty + amount >= 1) { qtyInput.value = currentQty + amount; } }
         function validateQtyInput(input) { if (input.value < 1 || input.value === '') { input.value = 1; } }

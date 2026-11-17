@@ -217,8 +217,8 @@
     <div class="nav-left">
         <a href="index.html" class="nav-link">Home</a>
         <a href="Shop.html" class="nav-link">Category</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="enquiry.html">ENQUIRY</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="enquiry.html" class="nav-link">Enquiry</a>
     </div>
     <div class="logo">HIMALORA<span>NATURAL</span></div>
     <div class="nav-right">
@@ -260,7 +260,7 @@
     <div class="back-to-shop-container"><a href="Shop.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back </a></div>
     
     <div class="product-container">
-        <!-- Main Gallery Image with Arrows (Updated to bath-salt.jpg) -->
+        <!-- Main Gallery Image with Arrows -->
         <div class="product-image-wrapper">
             <div class="gallery-arrow prev" onclick="changeGalleryImage(-1, event)"><i class="fa-solid fa-chevron-left"></i></div>
             <img src="bath-salt.jpg" id="mainImage" alt="Bath Salt" onclick="openZoom()">
@@ -276,7 +276,7 @@
             <div class="action-row">
                 <div class="qty-selector"><button onclick="changeQty(-1)">-</button><input type="number" id="mainQty" value="1" min="1" onchange="validateQtyInput(this)"><button onclick="changeQty(1)">+</button></div>
                 <button class="btn-add-cart" onclick="addToCart(false)">ADD TO CART</button>
-                <button class="btn-buy-now" onclick="addToCart(true)">BUY NOW</button>
+                <button class="btn-buy-now" onclick="buyNow()">BUY NOW</button>
             </div>
             <div class="secondary-actions">
                 <div><i class="fa-solid fa-arrow-right-arrow-left"></i> Compare</div>
@@ -347,7 +347,7 @@
     <div class="modal-overlay" id="askModal" onclick="closeModal('askModal')"><div class="modal-box" onclick="event.stopPropagation()"><div class="close-modal" onclick="closeModal('askModal')"><i class="fa-solid fa-xmark"></i></div><h2>Ask a Question</h2><form id="whatsappForm"><label>Your Name*</label><input type="text" id="askName" required><label>Your Phone Number</label><input type="text" id="askPhone"><label>Your Email*</label><input type="email" id="askEmail" required><label>Your Message*</label><textarea id="askMessage" rows="4" required></textarea><button type="submit" class="btn-submit">SUBMIT NOW</button></form></div></div>
     <div class="modal-overlay" id="shareModal" onclick="closeModal('shareModal')"><div class="modal-box share-modal" onclick="event.stopPropagation()"><div class="close-modal" onclick="closeModal('shareModal')"><i class="fa-solid fa-xmark"></i></div><h2>Copy link</h2><div class="share-input"><input type="text" id="shareLinkInput" value="https://himaloranatural.com/products/bath-salt" readonly><button class="btn-copy" onclick="copyLink()"><i class="fa-regular fa-copy"></i> Copy</button></div><h2 style="margin-top: 20px;">Share:</h2><div class="share-socials"><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-x-twitter"></i><i class="fa-brands fa-whatsapp"></i></div></div></div>
     
-    <!-- ZOOM OVERLAY WITH ARROWS (Updated to bath-salt.jpg) -->
+    <!-- ZOOM OVERLAY WITH ARROWS -->
     <div class="zoom-overlay" id="zoomOverlay">
         <div class="zoom-image-container">
             <div class="zoom-arrow prev" onclick="changeZoomImage(-1)"><i class="fa-solid fa-chevron-left"></i></div>
@@ -366,14 +366,14 @@
             { id: 2, name: "Salt Lamps", desc: "Hand-carved natural crystals", image: "lamps.jpg", link: "product-lamps.html" },
             { id: 3, name: "Cooking Slabs", desc: "Heat-retaining blocks for gourmet cooking", image: "Slabs.jpg", link: "product-slabs.html" },
             { id: 4, name: "Bath Salt", desc: "Detoxifying bath salts & massage stones", image: "bath-salt.jpg", link: "product-spa.html" },
-            { id: 5, name: "Construction Salt", desc: "Rock salt bricks & tiles for salt rooms", image: "Construction.jpg", link: "product-construction.html" },
+            { id: 5, name: "Pink Salt Short Glass", desc: "Unique serving glasses made from salt", image: "pink-salt-glass.jpg", link: "product-construction.html" },
             { id: 6, name: "Animal Licking Salt", desc: "Himalayan salt licks for livestock", image: "animal.jpg", link: "product-animal.html" },
-            { id: 7, name: "Urns & Decor", desc: "Biodegradable funeral urns & candle holders", image: "Urns.jpg", link: "Urns.html" },
-            { id: 8, name: "Industrial Salt", desc: "De-icing road salt & water softening salt", image: "industrial.jpg", link: "product-industrial.html" }
+            { id: 7, name: "Pink Salt Massage Stone", desc: "Soothing hot stones for spa therapy", image: "massage-stone.jpg", link: "Urns.html" },
+            { id: 8, name: "Pink Salt Tea Light Holder", desc: "Warm amber glow for your space", image: "tea-light-1.jpg", link: "product-industrial.html" }
         ];
         
-        // ✨ NEW GALLERY LOGIC (Updated main image to bath-salt.jpg) ✨
-        const galleryImages = ['bath-salt.jpg', 'bath-salt-2.jpg', 'bath-salt-3.jpg']; 
+        // ✨ NEW GALLERY LOGIC ✨
+        const galleryImages = ['bath-salt.jpg', 'bath-salt-2.jpg', 'bath-salt-3.jpg']; // Add your new image names here!
         let currentImageIndex = 0;
 
         function changeGalleryImage(direction, event) {
@@ -412,7 +412,6 @@
         // ----- REST OF THE LOGIC -----
         function addToCart(redirectToCheckout = false) { 
             const qty = parseInt(document.getElementById('mainQty').value); 
-            // Updated to use the new image name
             const product = { name: "Bath Salt", price: 14.99, image: "bath-salt.jpg" }; 
             let cart = JSON.parse(localStorage.getItem('himalora_cart')) || []; 
             const existingItem = cart.find(item => item.name === product.name); 
@@ -426,6 +425,15 @@
                 showToast("Added to cart successfully!"); 
             }
         }
+
+        function buyNow() {
+            const qty = parseInt(document.getElementById('mainQty').value);
+            const productName = "Bath Salt"; 
+            const productPrice = 14.99; 
+            const productImage = "bath-salt.jpg"; 
+            window.location.href = `checkout.html?buynow=true&name=${encodeURIComponent(productName)}&price=${productPrice}&image=${encodeURIComponent(productImage)}&qty=${qty}`;
+        }
+
         function updateCartCount() { const cart = JSON.parse(localStorage.getItem('himalora_cart')) || []; const totalItems = cart.reduce((sum, item) => sum + item.qty, 0); document.getElementById('cartCount').innerText = totalItems; }
         function changeQty(amount) { let qtyInput = document.getElementById('mainQty'); let currentQty = parseInt(qtyInput.value) || 0; if (currentQty + amount >= 1) { qtyInput.value = currentQty + amount; } }
         function validateQtyInput(input) { if (input.value < 1 || input.value === '') { input.value = 1; } }

@@ -217,8 +217,8 @@
     <div class="nav-left">
         <a href="index.html" class="nav-link">Home</a>
         <a href="Shop.html" class="nav-link">Category</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="enquiry.html">ENQUIRY</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="enquiry.html" class="nav-link">Enquiry</a>
     </div>
     <div class="logo">HIMALORA<span>NATURAL</span></div>
     <div class="nav-right">
@@ -276,7 +276,7 @@
             <div class="action-row">
                 <div class="qty-selector"><button onclick="changeQty(-1)">-</button><input type="number" id="mainQty" value="1" min="1" onchange="validateQtyInput(this)"><button onclick="changeQty(1)">+</button></div>
                 <button class="btn-add-cart" onclick="addToCart(false)">ADD TO CART</button>
-                <button class="btn-buy-now" onclick="addToCart(true)">BUY NOW</button>
+                <button class="btn-buy-now" onclick="buyNow()">BUY NOW</button>
             </div>
             <div class="secondary-actions">
                 <div><i class="fa-solid fa-arrow-right-arrow-left"></i> Compare</div>
@@ -366,7 +366,7 @@
             { id: 2, name: "Salt Lamps", desc: "Hand-carved natural crystals", image: "lamps.jpg", link: "product-lamps.html" },
             { id: 3, name: "Cooking Slabs", desc: "Heat-retaining blocks for gourmet cooking", image: "Slabs.jpg", link: "product-slabs.html" },
             { id: 4, name: "Bath Salt", desc: "Detoxifying bath salts & massage stones", image: "bath-salt.jpg", link: "product-spa.html" },
-            { id: 5, name: "Pink Salt Short Glass", desc: "Unique serving glasses made from salt (Set of 6)", image: "pink-salt-glass.jpg", link: "product-construction.html" },
+            { id: 5, name: "Pink Salt Short Glass", desc: "Unique serving glasses made from salt", image: "pink-salt-glass.jpg", link: "product-construction.html" },
             { id: 6, name: "Animal Licking Salt", desc: "Himalayan salt licks for livestock", image: "animal.jpg", link: "product-animal.html" },
             { id: 7, name: "Pink Salt Massage Stone", desc: "Soothing hot stones for spa therapy", image: "massage-stone.jpg", link: "Urns.html" },
             { id: 8, name: "Pink Salt Tea Light Holder", desc: "Warm amber glow for your space", image: "tea-light-1.jpg", link: "product-industrial.html" }
@@ -425,6 +425,15 @@
                 showToast("Added to cart successfully!"); 
             }
         }
+
+        function buyNow() {
+            const qty = parseInt(document.getElementById('mainQty').value);
+            const productName = "Pink Salt Tea Light Holder"; 
+            const productPrice = 17.23; 
+            const productImage = "tea-light-1.jpg"; 
+            window.location.href = `checkout.html?buynow=true&name=${encodeURIComponent(productName)}&price=${productPrice}&image=${encodeURIComponent(productImage)}&qty=${qty}`;
+        }
+
         function updateCartCount() { const cart = JSON.parse(localStorage.getItem('himalora_cart')) || []; const totalItems = cart.reduce((sum, item) => sum + item.qty, 0); document.getElementById('cartCount').innerText = totalItems; }
         function changeQty(amount) { let qtyInput = document.getElementById('mainQty'); let currentQty = parseInt(qtyInput.value) || 0; if (currentQty + amount >= 1) { qtyInput.value = currentQty + amount; } }
         function validateQtyInput(input) { if (input.value < 1 || input.value === '') { input.value = 1; } }

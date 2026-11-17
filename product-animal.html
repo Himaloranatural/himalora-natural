@@ -71,23 +71,40 @@
         .back-to-shop-container { max-width: 1400px; margin: 30px auto 0; padding: 0 5%; }
         .back-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; color: var(--text-muted); transition: all 0.3s ease; }
         .back-btn:hover { color: var(--accent-gold); transform: translateX(-5px); }
+        
+        /* PRODUCT CONTAINER */
         .product-container { max-width: 1400px; margin: 20px auto 50px; padding: 0 5%; display: flex; gap: 60px; }
-        .product-image-wrapper { flex: 1; position: relative; background: #fff; display: flex; justify-content: center; align-items: center; border: 1px solid #f0f0f0; overflow: hidden; cursor: zoom-in; padding: 0; height: 600px; }
-        .product-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .product-image-wrapper:hover img { transform: scale(1.15); }
+        
+        /* MAIN IMAGE GALLERY */
+        .product-image-wrapper { flex: 1; position: relative; background: #fff; display: flex; justify-content: center; align-items: center; border: 1px solid #f0f0f0; overflow: hidden; padding: 0; height: 600px; }
+        .product-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; cursor: zoom-in; }
+        .product-image-wrapper:hover img { transform: scale(1.08); }
+        
+        /* Left / Right Arrows on main image */
+        .gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 45px; height: 45px; background: rgba(44, 26, 14, 0.6); color: var(--text-white); border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 10; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2); }
+        .gallery-arrow:hover { background: var(--accent-gold); color: var(--primary-brown); border-color: var(--accent-gold); }
+        .gallery-arrow.prev { left: 15px; }
+        .gallery-arrow.next { right: 15px; }
+
         .product-details { flex: 1; padding-top: 20px; position: relative; display: flex; flex-direction: column; justify-content: center; }
         .product-details h1 { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 400; margin-bottom: 15px; color: var(--text-white); text-transform: uppercase;}
+        
+        /* Price styling */
         .price { font-size: 1.9rem; font-weight: 500; margin-bottom: 5px; color: var(--accent-gold); }
+
         .tax-note { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 30px; }
         .wishlist-icon { position: absolute; top: 0; right: 0; width: 45px; height: 45px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.3s; color: var(--text-white); }
         .wishlist-icon:hover { background: var(--accent-gold); color: var(--primary-brown); border-color: var(--accent-gold); }
         .wishlist-icon.active { background: var(--accent-gold); color: var(--primary-brown); border-color: var(--accent-gold); }
         .quantity-label { font-size: 0.9rem; margin: 20px 0 10px; color: var(--text-white); }
+        
+        /* Action Row & Quantity Selector */
         .action-row { display: flex; gap: 15px; margin-bottom: 30px; }
         .qty-selector { display: flex; border: 1px solid rgba(255,255,255,0.2); align-items: center; height: 55px; width: 120px; flex-shrink: 0; }
         .qty-selector button { background: none; border: none; width: 40px; height: 100%; font-size: 1.2rem; cursor: pointer; color: var(--text-white); }
         .qty-selector input { width: 40px; text-align: center; border: none; outline: none; font-family: var(--font-body); font-size: 1rem; background: transparent; color: var(--text-white); -moz-appearance: textfield; }
         .qty-selector input::-webkit-outer-spin-button, .qty-selector input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        
         .btn-add-cart { flex: 1; background: var(--accent-gold); color: var(--primary-brown); border: 1px solid var(--accent-gold); height: 55px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
         .btn-add-cart:hover { background: var(--text-white); border-color: var(--text-white); }
         .btn-buy-now { flex: 1; background: transparent; color: var(--accent-gold); border: 1px solid var(--accent-gold); height: 55px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
@@ -98,10 +115,12 @@
         .trust-badges { display: flex; justify-content: space-evenly; text-align: center; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; color: var(--text-white); padding: 0 15%; }
         .trust-badges i { font-size: 2.2rem; display: block; margin-bottom: 10px; color: var(--accent-gold); }
         
+        /* ✨ VERTICAL VIDEO SECTION ✨ */
         .cinematic-video-section { width: 100%; height: 85vh; position: relative; background-color: #050505; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .cinematic-video-section video { height: 100%; width: auto; max-width: 100%; object-fit: contain; pointer-events: none; transition: transform 0.8s ease; box-shadow: 0 0 50px rgba(0,0,0,0.8); }
         .cinematic-video-section:hover video { transform: scale(1.02); }
 
+        /* Story Section */
         .story-section { display: flex; background: #0a0a0a; color: white; min-height: 60vh; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); }
         .story-content { flex: 1; padding: 100px 10%; display: flex; flex-direction: column; justify-content: center; text-align: center; align-items: center; }
         .story-content h4 { font-family: var(--font-body); font-size: 0.85rem; letter-spacing: 3px; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; }
@@ -146,13 +165,24 @@
         .share-socials i { cursor: pointer; transition: 0.3s;}
         .share-socials i:hover { color: var(--accent-gold); }
         
+        /* PRODUCT IMAGE ZOOM OVERLAY */
         .zoom-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(44, 26, 14, 0.95); display: none; justify-content: center; align-items: center; z-index: 3000; }
         .zoom-overlay.active { display: flex; }
-        .zoom-overlay img { max-height: 80%; object-fit: contain; }
-        .zoom-controls { position: absolute; bottom: 40px; display: flex; gap: 20px; }
+        
+        .zoom-image-container { position: relative; max-width: 80%; max-height: 80%; display: flex; justify-content: center; align-items: center; }
+        .zoom-image-container img { max-height: 80vh; object-fit: contain; box-shadow: 0 0 50px rgba(0,0,0,0.8); border: 2px solid rgba(255,255,255,0.1); }
+        
+        /* Full Screen Zoom Arrows */
+        .zoom-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 60px; height: 60px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.3); color: var(--text-white); border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 1.5rem; transition: 0.3s; z-index: 10; }
+        .zoom-arrow:hover { background: var(--accent-gold); color: var(--primary-brown); border-color: var(--accent-gold); }
+        .zoom-arrow.prev { left: -80px; }
+        .zoom-arrow.next { right: -80px; }
+
+        .zoom-controls { position: absolute; bottom: -60px; display: flex; gap: 20px; }
         .zoom-controls div { width: 50px; height: 50px; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 1.2rem; color: var(--text-white); transition: 0.3s;}
         .zoom-controls div:hover { background: var(--accent-gold); color: var(--primary-brown); border-color: var(--accent-gold);}
 
+        /* VIDEO FULLSCREEN OVERLAY */
         .video-lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 5, 2, 0.98); display: none; justify-content: center; align-items: center; z-index: 4000; opacity: 0; transition: opacity 0.4s ease; }
         .video-lightbox.active { display: flex; opacity: 1; }
         .video-lightbox video { max-width: 95%; max-height: 90vh; box-shadow: 0 20px 50px rgba(0,0,0,0.8); outline: none; border: 2px solid rgba(255,255,255,0.1); }
@@ -173,6 +203,12 @@
             #searchInput { font-size: 1.2rem; } 
             .wishlist-header { font-size: 2rem; }
             .cinematic-video-section { height: 60vh; }
+            
+            /* Zoom Mobile Adjustments */
+            .zoom-image-container { max-width: 95%; }
+            .zoom-arrow { width: 45px; height: 45px; font-size: 1.2rem; }
+            .zoom-arrow.prev { left: 10px; }
+            .zoom-arrow.next { right: 10px; }
         }
     </style>
 </head>
@@ -180,9 +216,9 @@
    <header>
     <div class="nav-left">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="Shop.html" class="nav-link">CATEGORY</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="enquiry.html">ENQUIRY</a>
+        <a href="Shop.html" class="nav-link">Category</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="enquiry.html" class="nav-link">Enquiry</a>
     </div>
     <div class="logo">HIMALORA<span>NATURAL</span></div>
     <div class="nav-right">
@@ -222,8 +258,15 @@
         </div>
     </div>
     <div class="back-to-shop-container"><a href="Shop.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back </a></div>
+    
     <div class="product-container">
-        <div class="product-image-wrapper" onclick="openZoom()"><img src="animal.jpg" alt="Animal Licking Salt"></div>
+        <!-- Main Gallery Image with Arrows -->
+        <div class="product-image-wrapper">
+            <div class="gallery-arrow prev" onclick="changeGalleryImage(-1, event)"><i class="fa-solid fa-chevron-left"></i></div>
+            <img src="animal.jpg" id="mainImage" alt="Animal Licking Salt" onclick="openZoom()">
+            <div class="gallery-arrow next" onclick="changeGalleryImage(1, event)"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+        
         <div class="product-details">
             <div class="wishlist-icon" id="wishlistBtn" onclick="toggleWishlistPage(6)"><i class="fa-regular fa-heart"></i></div>
             <h1>ANIMAL LICKING SALT</h1>
@@ -233,7 +276,7 @@
             <div class="action-row">
                 <div class="qty-selector"><button onclick="changeQty(-1)">-</button><input type="number" id="mainQty" value="1" min="1" onchange="validateQtyInput(this)"><button onclick="changeQty(1)">+</button></div>
                 <button class="btn-add-cart" onclick="addToCart(false)">ADD TO CART</button>
-                <button class="btn-buy-now" onclick="addToCart(true)">BUY NOW</button>
+                <button class="btn-buy-now" onclick="buyNow()">BUY NOW</button>
             </div>
             <div class="secondary-actions">
                 <div><i class="fa-solid fa-arrow-right-arrow-left"></i> Compare</div>
@@ -273,14 +316,14 @@
         </div>
     </div>
 
-    <!-- ✨ VERTICAL VIDEO SECTION IN THE MIDDLE ✨ -->
+    <!-- ✨ 1. VERTICAL VIDEO SECTION IN THE MIDDLE ✨ -->
     <div class="cinematic-video-section" onclick="openVideoLightbox()">
         <video autoplay loop muted playsinline>
             <source src="edible-video.mp4" type="video/mp4">
         </video>
     </div>
     
-    <!-- ✨ STORY CONTENT AT THE VERY BOTTOM ✨ -->
+    <!-- ✨ 2. STORY CONTENT AT THE VERY BOTTOM ✨ -->
     <div class="story-section">
         <div class="story-content">
             <h4>— THE STORY</h4>
@@ -303,19 +346,70 @@
 
     <div class="modal-overlay" id="askModal" onclick="closeModal('askModal')"><div class="modal-box" onclick="event.stopPropagation()"><div class="close-modal" onclick="closeModal('askModal')"><i class="fa-solid fa-xmark"></i></div><h2>Ask a Question</h2><form id="whatsappForm"><label>Your Name*</label><input type="text" id="askName" required><label>Your Phone Number</label><input type="text" id="askPhone"><label>Your Email*</label><input type="email" id="askEmail" required><label>Your Message*</label><textarea id="askMessage" rows="4" required></textarea><button type="submit" class="btn-submit">SUBMIT NOW</button></form></div></div>
     <div class="modal-overlay" id="shareModal" onclick="closeModal('shareModal')"><div class="modal-box share-modal" onclick="event.stopPropagation()"><div class="close-modal" onclick="closeModal('shareModal')"><i class="fa-solid fa-xmark"></i></div><h2>Copy link</h2><div class="share-input"><input type="text" id="shareLinkInput" value="https://himaloranatural.com/products/animal-licking-salt" readonly><button class="btn-copy" onclick="copyLink()"><i class="fa-regular fa-copy"></i> Copy</button></div><h2 style="margin-top: 20px;">Share:</h2><div class="share-socials"><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-x-twitter"></i><i class="fa-brands fa-whatsapp"></i></div></div></div>
-    <div class="zoom-overlay" id="zoomOverlay"><div class="zoom-controls"><div onclick="closeZoom()"><i class="fa-solid fa-xmark"></i></div></div><img src="animal.jpg" alt="Zoomed Image"></div>
+    
+    <!-- ZOOM OVERLAY WITH ARROWS -->
+    <div class="zoom-overlay" id="zoomOverlay">
+        <div class="zoom-image-container">
+            <div class="zoom-arrow prev" onclick="changeZoomImage(-1)"><i class="fa-solid fa-chevron-left"></i></div>
+            <img src="animal.jpg" id="zoomImage" alt="Zoomed Image">
+            <div class="zoom-arrow next" onclick="changeZoomImage(1)"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+        <div class="zoom-controls">
+            <div onclick="closeZoom()"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+    </div>
+    
     <div class="toast" id="toastMsg">Added successfully!</div>
     <script>
         const products = [
             { id: 1, name: "Edible Salt", desc: "Pink, White & Black Himalayan salt", image: "edible.jpg", link: "edible.html" },
             { id: 2, name: "Salt Lamps", desc: "Hand-carved natural crystals", image: "lamps.jpg", link: "product-lamps.html" },
             { id: 3, name: "Cooking Slabs", desc: "Heat-retaining blocks for gourmet cooking", image: "Slabs.jpg", link: "product-slabs.html" },
-            { id: 4, name: "Spa & Wellness", desc: "Detoxifying bath salts & massage stones", image: "Spa.jpg", link: "product-spa.html" },
-            { id: 5, name: "Construction Salt", desc: "Rock salt bricks & tiles for salt rooms", image: "Construction.jpg", link: "product-construction.html" },
+            { id: 4, name: "Bath Salt", desc: "Detoxifying bath salts & massage stones", image: "bath-salt.jpg", link: "product-spa.html" },
+            { id: 5, name: "Pink Salt Short Glass", desc: "Unique serving glasses made from salt", image: "pink-salt-glass.jpg", link: "product-construction.html" },
             { id: 6, name: "Animal Licking Salt", desc: "Himalayan salt licks for livestock", image: "animal.jpg", link: "product-animal.html" },
-            { id: 7, name: "Urns & Decor", desc: "Biodegradable funeral urns & candle holders", image: "Urns.jpg", link: "Urns.html" },
-            { id: 8, name: "Industrial Salt", desc: "De-icing road salt & water softening salt", image: "industrial.jpg", link: "product-industrial.html" }
+            { id: 7, name: "Pink Salt Massage Stone", desc: "Soothing hot stones for spa therapy", image: "massage-stone.jpg", link: "Urns.html" },
+            { id: 8, name: "Pink Salt Tea Light Holder", desc: "Warm amber glow for your space", image: "tea-light-1.jpg", link: "product-industrial.html" }
         ];
+        
+        // ✨ NEW GALLERY LOGIC ✨
+        const galleryImages = ['animal.jpg', 'animal-2.jpg', 'animal-3.jpg']; 
+        let currentImageIndex = 0;
+
+        function changeGalleryImage(direction, event) {
+            if(event) event.stopPropagation(); 
+            
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+            if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+            
+            document.getElementById('mainImage').src = galleryImages[currentImageIndex];
+            document.getElementById('zoomImage').src = galleryImages[currentImageIndex]; 
+        }
+
+        function changeZoomImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+            if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+            
+            document.getElementById('zoomImage').src = galleryImages[currentImageIndex];
+            document.getElementById('mainImage').src = galleryImages[currentImageIndex]; 
+        }
+
+        function openZoom() {
+            document.getElementById('zoomImage').src = galleryImages[currentImageIndex];
+            document.getElementById('zoomOverlay').classList.add('active');
+        }
+
+        function closeZoom() { 
+            document.getElementById('zoomOverlay').classList.remove('active'); 
+        }
+
+        document.getElementById('zoomOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeZoom();
+        });
+
+        // ----- REST OF THE LOGIC -----
         function addToCart(redirectToCheckout = false) { 
             const qty = parseInt(document.getElementById('mainQty').value); 
             const product = { name: "Animal Licking Salt", price: 40.00, image: "animal.jpg" }; 
@@ -331,6 +425,15 @@
                 showToast("Added to cart successfully!"); 
             }
         }
+
+        function buyNow() {
+            const qty = parseInt(document.getElementById('mainQty').value);
+            const productName = "Animal Licking Salt"; 
+            const productPrice = 40.00; 
+            const productImage = "animal.jpg"; 
+            window.location.href = `checkout.html?buynow=true&name=${encodeURIComponent(productName)}&price=${productPrice}&image=${encodeURIComponent(productImage)}&qty=${qty}`;
+        }
+
         function updateCartCount() { const cart = JSON.parse(localStorage.getItem('himalora_cart')) || []; const totalItems = cart.reduce((sum, item) => sum + item.qty, 0); document.getElementById('cartCount').innerText = totalItems; }
         function changeQty(amount) { let qtyInput = document.getElementById('mainQty'); let currentQty = parseInt(qtyInput.value) || 0; if (currentQty + amount >= 1) { qtyInput.value = currentQty + amount; } }
         function validateQtyInput(input) { if (input.value < 1 || input.value === '') { input.value = 1; } }
@@ -338,24 +441,13 @@
         document.getElementById('whatsappForm').addEventListener('submit', function(e) { e.preventDefault(); closeModal('askModal'); showToast('Sent successfully!'); this.reset(); });
         function showToast(customText = "Added successfully!") { let toast = document.getElementById('toastMsg'); toast.innerText = customText; toast.classList.add('show'); setTimeout(() => { toast.classList.remove('show'); }, 3000); }
         function toggleFaq(element) { let item = element.parentElement; let icon = element.querySelector('i'); document.querySelectorAll('.faq-item').forEach(el => { if(el !== item) { el.classList.remove('active'); el.querySelector('.faq-question i').className = 'fa-solid fa-plus'; } }); item.classList.toggle('active'); if(item.classList.contains('active')) { icon.className = 'fa-solid fa-xmark'; } else { icon.className = 'fa-solid fa-plus'; } }
-        function openAskModal() { document.getElementById('askModal').classList.add('active'); } function openShareModal() { document.getElementById('shareModal').classList.add('active'); } function closeModal(modalId) { document.getElementById(modalId).classList.remove('active'); } function openZoom() { document.getElementById('zoomOverlay').classList.add('active'); } function closeZoom() { document.getElementById('zoomOverlay').classList.remove('active'); }
+        function openAskModal() { document.getElementById('askModal').classList.add('active'); } function openShareModal() { document.getElementById('shareModal').classList.add('active'); } function closeModal(modalId) { document.getElementById(modalId).classList.remove('active'); }
         function toggleWishlistPage(productId) { let wishlist = JSON.parse(localStorage.getItem('himalora_wishlist')) || []; const btn = document.getElementById('wishlistBtn'); const icon = btn.querySelector('i'); const index = wishlist.indexOf(productId); if (index > -1) { wishlist.splice(index, 1); btn.classList.remove('active'); icon.classList.remove('fa-solid'); icon.classList.add('fa-regular'); showToast("Removed from wishlist"); } else { wishlist.push(productId); btn.classList.add('active'); icon.classList.remove('fa-regular'); icon.classList.add('fa-solid'); showToast("Added to wishlist"); } localStorage.setItem('himalora_wishlist', JSON.stringify(wishlist)); }
         
-        function openVideoLightbox() {
-            const lightbox = document.getElementById('videoLightbox');
-            const video = document.getElementById('fullVideoPlayer');
-            lightbox.classList.add('active');
-            video.currentTime = 0;
-            video.play();
-        }
-        function closeVideoLightbox() {
-            const lightbox = document.getElementById('videoLightbox');
-            const video = document.getElementById('fullVideoPlayer');
-            lightbox.classList.remove('active');
-            video.pause();
-        }
-        document.getElementById('videoLightbox').addEventListener('click', function(e) { if (e.target === this) { closeVideoLightbox(); } });
-
+        function openVideoLightbox() { const lightbox = document.getElementById('videoLightbox'); const video = document.getElementById('fullVideoPlayer'); lightbox.classList.add('active'); video.currentTime = 0; video.play(); }
+        function closeVideoLightbox() { const lightbox = document.getElementById('videoLightbox'); const video = document.getElementById('fullVideoPlayer'); lightbox.classList.remove('active'); video.pause(); }
+        document.getElementById('videoLightbox').addEventListener('click', function(e) { if (e.target === this) closeVideoLightbox(); });
+        
         function openWishlist() { renderWishlist(); document.getElementById('wishlistOverlay').classList.add('active'); }
         function closeWishlist() { document.getElementById('wishlistOverlay').classList.remove('active'); }
         document.getElementById('wishlistOverlay').addEventListener('click', function(e) { if (e.target === this) closeWishlist(); });
